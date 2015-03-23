@@ -1,0 +1,29 @@
+{
+  "name": "minori",
+  "version": "0.0.0",
+  "description": "Minori is a static Wiki site generator",
+  "author": "Phoenix Nemo <i@phoenixlzx.com>",
+  "bin": {
+    "minori": "./bin/minori"
+  },
+  "main": "lib/index",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/phoenixlzx/MinoriWiki.git"
+  },
+  "homepage": "https://github.com/phoenixlzx/MinoriWiki",
+  "bugs": {
+    "url": "https://github.com/phoenixlzx/MinoriWiki/issues"
+  },
+  "keywords": [
+    "wiki",
+    "minori"
+  ],
+  "dependencies": {
+    "minimist": "1.1.1",
+    "marked": "0.3.3"
+  },
+  "preferGlobal": true,
+  "private": false,
+  "license": "MIT"
+}
