@@ -21,7 +21,8 @@
   ],
   "dependencies": {
     "minimist": "1.1.1",
-    "marked": "0.3.3"
+    "marked": "0.3.3",
+    "ncp": "2.0.0"
   },
   "preferGlobal": true,
   "private": false,
