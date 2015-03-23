@@ -1,0 +1,41 @@
+# MinoriWiki Configuration
+# ========================
+# https://github.com/phoenixlzx/MinoriWiki
+
+# Wiki
+wiki:
+  title: MinoriWiki
+  subtitle: Yet another static wiki generator
+  description: MinoriWiki site
+  author: foo bar
+  email: foo@bar.com
+  language: en-US
+
+# Base
+base:
+  uri: https://wiki.example.com
+  path: /
+
+# Directory
+dir:
+  static: static
+  site: wiki
+
+# Custom
+custom:
+  theme: pure
+  time: YYYY-MM-DD HH:mm:ss
+  disqus: minoriwiki
+  markdown:
+    gfm: true
+    pedantic: false
+    sanitize: false
+    tables: true
+    breaks: true
+    smartLists: true
+    smartypants: true
+
+# Deployment
+deploy:
+  repo: git@example.com:wiki/site.git
+  branch: gh-pages

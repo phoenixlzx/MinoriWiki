@@ -22,7 +22,8 @@
   "dependencies": {
     "minimist": "1.1.1",
     "marked": "0.3.3",
-    "ncp": "2.0.0"
+    "ncp": "2.0.0",
+    "js-yaml": "3.2.7"
   },
   "preferGlobal": true,
   "private": false,
