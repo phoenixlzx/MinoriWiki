@@ -5,12 +5,12 @@
 # Wiki
 wiki:
   title: MinoriWiki
-  subtitle: Yet another static wiki generator
+  tagline: Yet another static wiki generator
   description: MinoriWiki site
   author: foo bar
   email: foo@bar.com
   language: en-US
-  theme: pure
+  theme: paper
 
 # Base
 base:

@@ -23,7 +23,8 @@
     "minimist": "1.1.1",
     "marked": "0.3.3",
     "ncp": "2.0.0",
-    "js-yaml": "3.2.7"
+    "js-yaml": "3.2.7",
+    "ejs": "2.3.1"
   },
   "preferGlobal": true,
   "private": false,
