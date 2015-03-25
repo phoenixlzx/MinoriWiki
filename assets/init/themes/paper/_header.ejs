@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="<%= config['wiki'].language %>">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="<%= config['wiki'].author %>">
     <meta name="description" content="<%= config['wiki'].description %>">
     <title>
-    <% if (page.title) { %>
-    <%= page.title %> - <%= config['wiki'].title %>
-    <% } else { %>
-    <%= config['wiki'].title %> - <%= config['wiki'].tagline %>
-    <% } %>
+        <% if (page && page.title) { %>
+        <%= page.title %> - <%= config['wiki'].title %>
+        <% } else { %>
+        <%= config['wiki'].title %> - <%= config['wiki'].tagline %>
+        <% } %>
     </title>
-    <link href="<% config['wiki'].path %>assets/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-        <div class="page-header">
-            <% if (page.title) { %>
-            <h1><%= page.title %></h1>
-            <% } else { %>
-            <h1><%= config['wiki'].title %></h1>
-            <p class="lead"><%= config['wiki'].tagline %></p>
-            <% } %>
-        </div>
+    <link href="<%= config['base'].path %>assets/bootstrap.min.css" rel="stylesheet"/>
+    <link href="<%= config['base'].path %>assets/style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <% if (page && page.title) { %>
+        <h1><%= page.title %></h1>
+        <% } else { %>
+        <h1><%= config['wiki'].title %></h1>
+
+        <p class="lead"><%= config['wiki'].tagline %></p>
+        <% } %>
+    </div>

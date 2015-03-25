@@ -1,18 +1,19 @@
 <%- include _header %>
-        <div class="row">
-            <!-- two columns -->
-            <div class="col-lg-3 col-md-3">
-                <%- include _sidebar %>
+<div class="row">
+    <!-- two columns -->
+    <div class="col-lg-3 col-md-3">
+            <%- include _sidebar %>
+            <%- include _side_index %>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12">
+        <div class="index-content">
+            <div class="row">
+                <span class="label label-primary pull-right"><%= page.category %></span>
             </div>
-            <div class="col-lg-9 col-md-9 col-sm-12">
-                <div class="index-content">
-                    <div class="row">
-                        <span class="label label-primary pull-right"><%= page.category %></span>
-                    </div>
-                    <div class="row">
-                        <%= page.content %>
-                    </div>
-                </div>
+            <div class="row">
+                <%- page.content %>
             </div>
         </div>
+    </div>
+</div>
 <%- include _footer %>

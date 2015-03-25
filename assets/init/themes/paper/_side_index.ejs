@@ -1,0 +1,16 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="panel-body">
+        <h4><a href="<%= config['base'].path %>">Homepage</a></h4>
+        <% categories.forEach(function(category) { %>
+        <h5><%= category.name %></h5>
+        <ul class="list-unstyled">
+            <% category.pages.forEach(function(p) { %>
+            <li><a href="<%= config['base'].path %>page/<%= p.link %>"><%= p.title %></a></li>
+            <% }) %>
+        </ul>
+        <% }) %>
+    </div>
+</div>

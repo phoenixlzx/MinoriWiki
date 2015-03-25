@@ -1,26 +1,26 @@
 <%- include _header %>
-        <div class="row">
-            <!-- two columns -->
-            <div class="col-lg-3 col-md-3">
-                <%- include _sidebar %>
-            </div>
-            <div class="col-lg-9 col-md-9 col-sm-12">
-                <div class="index-content">
-                    <% index.categories.forEach(function(category) { %>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3><%= category.name %></h3>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1">
-                            <ul class="list-unstyled">
-                                <% category.pages.forEach(function(p) { %>
-                                <li><a href="<%= config['base'].path %>page/<%= p.link %>"><%= p.title %></a></li>
-                                <% }) %>
-                            </ul>
-                        </div>
-                    </div>
-                    <% }) %>
+<div class="row">
+    <!-- two columns -->
+    <div class="col-lg-3 col-md-3">
+            <%- include _sidebar %>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12">
+        <div class="index-content">
+            <% categories.forEach(function(category) { %>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3><%= category.name %></h3>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <ul class="list-unstyled">
+                        <% category.pages.forEach(function(p) { %>
+                        <li><a href="<%= config['base'].path %>page/<%= p.link %>"><%= p.title %></a></li>
+                        <% }) %>
+                    </ul>
                 </div>
             </div>
+            <% }) %>
         </div>
+    </div>
+</div>
 <%- include _footer %>
