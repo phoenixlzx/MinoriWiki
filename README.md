@@ -4,7 +4,7 @@
 
 MinoriWiki is a static Wiki site Generator
 
-**Currently under development - issues & PRs welcome**
+**Currently under development - PRs welcome**
 
 ### Usage
 
