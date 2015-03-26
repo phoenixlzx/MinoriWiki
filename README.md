@@ -13,7 +13,7 @@ MinoriWiki is a static Wiki site Generator
 3. `minori init`
 4. Edit `config.yml` to fit your needs
 5. Use `minori note [filename]` to create new note or edit existing one
-6. Deploy your files generated under site directory (Default to `wiki`) to production environment
+6. Deploy your files generated under site directory (Default to `wiki`) to production environment with command `minori commit`.
 
 * `source` (defaults to `notes`) directory contains all note markdown files
 * `static` (defaults to `static`) directory will be copied to `site` directory, you could store any static files that may be used in your wiki site.
