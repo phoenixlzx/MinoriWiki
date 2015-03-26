@@ -20,10 +20,9 @@
 <div class="container">
     <div class="page-header">
         <% if (page && page.title) { %>
-        <h1><%= page.title %></h1>
+        <h1><a href="<%= config['base'].path %>" class="logo-text"><%= config['wiki'].title %></a>&nbsp;<small>/<%= page.title %></small></h1>
         <% } else { %>
-        <h1><%= config['wiki'].title %></h1>
-
+        <h1><a href="<%= config['base'].path %>" class="logo-text"><%= config['wiki'].title %></a></h1>
         <p class="lead"><%= config['wiki'].tagline %></p>
         <% } %>
     </div>

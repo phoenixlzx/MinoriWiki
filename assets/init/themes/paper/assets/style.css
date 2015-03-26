@@ -24,3 +24,24 @@ body {
 .footer-text {
     margin: 15px 80px;
 }
+
+.logo-text {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:link {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:visited {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:active {
+    color: inherit;
+    text-decoration: none;
+}
