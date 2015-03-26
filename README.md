@@ -19,6 +19,13 @@ MinoriWiki is a static Wiki site Generator
 * `static` (defaults to `static`) directory will be copied to `site` directory, you could store any static files that may be used in your wiki site.
 * `site` (defaults to `wiki`) directory contains generated site files.
 
+### Commands
+
+* `minori init` or `minori i` - Init under current working directory
+* `minori note [filename]` or `minori n [filename]` - Create or edit note
+* `minori done` or `minori d` - Generate site files
+* `minori commit` or `minori c` - Commit changes and deploy to production environment
+
 ### Theme
 
 Theme is customizable. Theme directory should contain:
