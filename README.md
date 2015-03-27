@@ -19,6 +19,8 @@ MinoriWiki is a static Wiki site Generator
 * `static` (defaults to `static`) directory will be copied to `site` directory, you could store any static files that may be used in your wiki site.
 * `site` (defaults to `wiki`) directory contains generated site files.
 
+**If you are going to change the `site` directory, just rename the `wiki` folder to keep Git objects.**
+
 ### Commands
 
 * `minori init` or `minori i` - Init under current working directory
