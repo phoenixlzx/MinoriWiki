@@ -41,3 +41,4 @@ custom:
 deploy:
   repo: git@example.com:wiki/site.git
   branch: gh-pages
+  cname: your.domain.com
