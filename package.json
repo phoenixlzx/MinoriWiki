@@ -25,7 +25,8 @@
     "ncp": "2.0.0",
     "js-yaml": "3.2.7",
     "ejs": "2.3.1",
-    "mkdirp": "0.5.0"
+    "mkdirp": "0.5.0",
+    "recursive-readdir": "1.2.1"
   },
   "preferGlobal": true,
   "private": false,
