@@ -1,10 +1,8 @@
 # MinoriWiki
 
-[![npm version](https://badge.fury.io/js/minori.svg)](http://badge.fury.io/js/minori)
-
 ![MinoriWiki](https://raw.githubusercontent.com/phoenixlzx/MinoriWiki/c1be1e77d6f48607fd60be4727b96a18ca7d648a/misc/minori-note.jpg)
 
-MinoriWiki is a static Wiki site Generator
+MinoriWiki is a static Wiki site Generator [![npm version](https://badge.fury.io/js/minori.svg)](http://badge.fury.io/js/minori)
 
 **Currently under development - PRs welcome**
 
@@ -14,7 +12,7 @@ MinoriWiki is a static Wiki site Generator
 2. Create an empty directory
 3. `minori init`
 4. Edit `config.yml` to fit your needs
-5. Use `minori note [filename]` to create new note or edit existing one
+5. Use `minori note [filename]` to create new note or edit existing one, you can also use `api/data` for filename to create directories
 6. Deploy your files generated under site directory (Default to `wiki`) to production environment with command `minori commit`.
 
 * `source` (defaults to `notes`) directory contains all note markdown files
