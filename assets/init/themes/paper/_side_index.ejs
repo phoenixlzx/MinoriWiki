@@ -8,7 +8,7 @@
         <h5><%= category.name %></h5>
         <ul class="list-unstyled">
             <% category.pages.forEach(function(p) { %>
-            <li><a href="<%= config['base'].path %>page/<%= p.link %>"><%= p.title %></a></li>
+            <li><a href="<%= config['base'].path %>page<%= p.link %>"><%= p.title %></a></li>
             <% }) %>
         </ul>
         <% }) %>
