@@ -14,7 +14,16 @@
                 <div class="col-md-10 col-md-offset-1">
                     <ul class="list-unstyled">
                         <% category.pages.forEach(function(p) { %>
-                        <li><a href="<%= config['base'].path %>page<%= p.link %>"><%= p.title %></a></li>
+                        <li>
+                            <a href="<%= config['base'].path %>page<%= p.link %>">
+                                <% if (p.link.lastIndexOf('/') !== 0) { %>
+                                <% var prelink = p.link.split('/')[1] %>
+                                <%= prelink %> / <%= p.title %>
+                                <% } else { %>
+                                <%= p.title %>
+                                <% } %>
+                            </a>
+                        </li>
                         <% }) %>
                     </ul>
                 </div>
