@@ -11,6 +11,7 @@ wiki:
   email: foo@bar.com
   language: en-US
   theme: paper
+  favicon: true
 
 # Base
 base:
