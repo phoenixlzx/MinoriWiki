@@ -11,35 +11,35 @@ wiki:
   email: foo@bar.com
   language: en-US
   theme: paper
-  favicon: true
+  favicon: true    # put your favicon.ico into MinoriWiki site configuration root directory
 
 # Base
 base:
-  uri: https://wiki.example.com
-  path: /
+  uri: https://wiki.example.com    # domain and protocol of your site, not containing any path and the final slash '/'
+  path: /    # change this if you want your site to be in a sub-directory
 
 # Directory
 dir:
-  source: notes
-  static: static
-  site: wiki
+  source: notes    # notes source code
+  static: static    # static files will be copied to <site root path>/static, to help you link any static file in articles
+  site: wiki    # generated site files which are ready to be deployed
 
 # Custom
 custom:
   time: YYYY-MM-DD HH:mm:ss
-  disqus: minoriwiki
+  disqus: minoriwiki    # your disqus short link, leave blank to disable comment
   markdown:
-    gfm: true
+    gfm: true    # github flavored markdown: https://help.github.com/articles/github-flavored-markdown/
     pedantic: false
     sanitize: false
     tables: true
     breaks: true
     smartLists: true
     smartypants: true
-  editor: vim
+  editor: vim    # auto open your note after command
 
 # Deployment
 deploy:
   repo: git@example.com:wiki/site.git
   branch: gh-pages
-  cname: your.domain.com
+  cname: your.domain.com    # if you want to deploy site on github you probably want this
