@@ -8,6 +8,11 @@ body {
     margin-bottom: 60px;
 }
 
+img {
+    max-width: 90%;
+    max-height: 40em;
+}
+
 .index-content {
     margin-left: 40px;
 }
