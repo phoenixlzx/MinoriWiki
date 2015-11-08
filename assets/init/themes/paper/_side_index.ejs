@@ -3,13 +3,13 @@
         <h3 class="panel-title">Navigation</h3>
     </div>
     <div class="panel-body">
-        <h6><a href="<%= config['base'].path %>">Homepage</a></h6>
+        <h6><a href="<%= config['base'].path %>" target="_self">Homepage</a></h6>
         <% categories.forEach(function(category) { %>
         <h5><%= category.name %></h5>
         <ul class="list-unstyled">
             <% category.pages.forEach(function(p) { %>
             <li>
-                <a href="<%= config['base'].path %>page<%= p.link %>">
+                <a href="<%= config['base'].path %>page<%= p.link %>" target="_self">
                     <% if (p.link.lastIndexOf('/') !== 0) { %>
                     <% var prelink = p.link.split('/')[1] %>
                     <%= prelink %> / <%= p.title %>

@@ -16,12 +16,13 @@
     <link href="<%= config['base'].path %>assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="<%= config['base'].path %>assets/style.css" rel="stylesheet"/>
     <script src="<%= config['base'].path %>assets/highlight.min.js"></script>
+    <base target="_blank">
 </head>
 <body>
 <div class="container">
     <div class="page-header">
         <% if (page && page.title) { %>
-        <h1><a href="<%= config['base'].path %>" class="logo-text"><%= config['wiki'].title %></a>&nbsp;
+        <h1><a href="<%= config['base'].path %>" class="logo-text" target="_self"><%= config['wiki'].title %></a>&nbsp;
             <% if (page.link.lastIndexOf('/') !== 0) { %>
             <% var prelink = page.link.split('/')[1] %>
             <small>/ <%= prelink %> / <%= page.title %></small>
@@ -30,7 +31,7 @@
             <% } %>
         </h1>
         <% } else { %>
-        <h1><a href="<%= config['base'].path %>" class="logo-text"><%= config['wiki'].title %></a></h1>
+        <h1><a href="<%= config['base'].path %>" class="logo-text" target="_self"><%= config['wiki'].title %></a></h1>
         <p class="lead"><%= config['wiki'].tagline %></p>
         <% } %>
     </div>
