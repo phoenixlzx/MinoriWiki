@@ -30,8 +30,12 @@ img {
     font-size: 22px;
 }
 
-.row > h5, h6 {
+.row > h5 {
     font-size: 18px;
+}
+
+.row > h6 {
+    font-size: 16px;
 }
 
 .index-content {
