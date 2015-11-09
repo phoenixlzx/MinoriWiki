@@ -1,6 +1,6 @@
 {
   "name": "minori",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Minori is a static Wiki site generator",
   "author": "Phoenix Nemo <i@phoenixlzx.com>",
   "bin": {
