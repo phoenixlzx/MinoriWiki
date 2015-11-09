@@ -38,6 +38,10 @@ img {
     font-size: 16px;
 }
 
+a.anchor {
+    display: inline-block;
+}
+
 .index-content {
     margin-left: 40px;
 }
