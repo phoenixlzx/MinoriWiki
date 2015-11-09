@@ -42,6 +42,22 @@ a.anchor {
     display: inline-block;
 }
 
+a.anchor:link {
+    text-decoration: none;
+}
+
+a.anchor:hover {
+    text-decoration: none;
+}
+
+a.anchor:visited {
+    text-decoration: none;
+}
+
+a.anchor:active {
+    text-decoration: none;
+}
+
 .index-content {
     margin: 0 20px;
 }
