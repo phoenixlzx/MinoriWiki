@@ -36,6 +36,7 @@ custom:
     breaks: true
     smartLists: true
     smartypants: true
+  mathjax: false    # enable MathJax TeX support, you need markdown.sanitize set to false to work
   editor: vim    # auto open your note after command
 
 # Deployment
