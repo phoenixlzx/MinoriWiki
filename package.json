@@ -20,12 +20,14 @@
     "minori"
   ],
   "dependencies": {
-    "minimist": "1.1.1",
-    "marked": "0.3.5",
-    "ncp": "2.0.0",
-    "js-yaml": "3.2.7",
+    "async": "^1.5.0",
     "ejs": "2.3.1",
+    "js-yaml": "3.2.7",
+    "marked": "0.3.5",
+    "mathjax-node": "^0.4.0",
+    "minimist": "1.1.1",
     "mkdirp": "0.5.0",
+    "ncp": "2.0.0",
     "recursive-readdir": "1.2.1"
   },
   "preferGlobal": true,
