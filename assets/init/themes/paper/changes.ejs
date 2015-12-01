@@ -1,0 +1,33 @@
+<%- include _header %>
+<div class="row">
+    <!-- two columns -->
+    <div class="col-lg-3 col-md-3">
+        <%- include _sidebar %>
+    </div>
+    <div class="col-lg-9 col-md-9 col-sm-12">
+        <div class="index-content">
+            <h2>Recent Changes</h2>
+            <% commits.forEach(function(commit) { %>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4><%= commit.subject %></h4>
+                    <br/>
+                    <small><code><%= commit.abbrevHash %></code> by <%= commit.committerName %> on <%= commit.committerDate %></small>
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <ul class="list-unstyled">
+                        <% commit.files.forEach(function(f) { %>
+                        <li>
+                            <a href="<%= config['base'].path + config['dir'].raw %>/<%= f %>" target="_self">
+                                <%= f %>
+                            </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+<%- include _footer %>

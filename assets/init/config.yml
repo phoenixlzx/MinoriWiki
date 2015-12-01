@@ -12,6 +12,7 @@ wiki:
   language: en-US
   theme: paper
   favicon: true    # put your favicon.ico into MinoriWiki site configuration root directory
+  log: true    # enable commit logs (will be displayed in public)
 
 # Base
 base:
@@ -23,6 +24,7 @@ dir:
   source: notes    # notes source code
   static: static    # static files will be copied to <site root path>/static, to help you link any static file in articles
   site: wiki    # generated site files which are ready to be deployed
+  raw: raw    # raw (source) note file in website directory
 
 # Custom
 custom:
