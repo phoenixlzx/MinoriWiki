@@ -35,6 +35,7 @@ Theme is customizable. Theme directory should contain:
 * `assets` directory to store style sheets, scripts, fonts, etc.
 * `index.ejs` is the homepage template.
 * `page.ejs` is the post page template.
+* `changes.ejs` is the changelog page template.
 
 The following variables are passed to EJS:
 
@@ -58,6 +59,23 @@ The following variables are passed to EJS:
 ]
 ```
 * `page` - `{}` in homepage and the specified page object in post page.
+
+When parsing changelog page, the commits object is passed:
+
+```
+[ { abbrevHash: '2765ac1',
+    subject: 'update test.md',
+    committerName: 'foo bar',
+    committerDate: 'Tue Dec 1 15:48:53 2015 +0800',
+    status: [ 'M' ],
+    files: [ 'test.md' ] },
+  { abbrevHash: '9bf21ee',
+    subject: 'update',
+    committerName: 'foo bar',
+    committerDate: 'Tue Dec 1 15:26:06 2015 +0800',
+    status: [ 'M' ],
+    files: [ 'test.md' ] }
+```
 
 ### License
 
