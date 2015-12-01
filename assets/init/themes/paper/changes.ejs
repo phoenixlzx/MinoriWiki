@@ -10,7 +10,7 @@
             <% commits.forEach(function(commit) { %>
             <div class="row">
                 <div class="col-md-12">
-                    <h4><%= commit.subject %></h4>
+                    <b><%= commit.subject %></b>
                     <br/>
                     <small><code><%= commit.abbrevHash %></code> by <%= commit.committerName %> on <%= commit.committerDate %></small>
                 </div>
