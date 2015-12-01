@@ -1,0 +1,100 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+img {
+    max-width: 90%;
+    max-height: 40em;
+}
+
+.row > h1 {
+    font-size: 36px;
+    border-bottom: 1px solid #eee;
+}
+
+.row > h2 {
+    font-size: 30px;
+}
+
+.row > h3 {
+    font-size: 26px;
+}
+
+.row > h4 {
+    font-size: 22px;
+}
+
+.row > h5 {
+    font-size: 18px;
+}
+
+.row > h6 {
+    font-size: 16px;
+}
+
+a.anchor {
+    display: inline-block;
+}
+
+a.anchor:link {
+    text-decoration: none;
+}
+
+a.anchor:hover {
+    text-decoration: none;
+}
+
+a.anchor:visited {
+    text-decoration: none;
+}
+
+a.anchor:active {
+    text-decoration: none;
+}
+
+.index-content {
+    margin: 0 20px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+.footer-text {
+    margin: 15px 80px;
+}
+
+.logo-text {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:link {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:visited {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:hover {
+    color: inherit;
+    text-decoration: none;
+}
+.logo-text:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* highlight.js tomorrow theme */
+.hljs-comment{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rule .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.hljs-name,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.hljs-title,.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;overflow-x:auto;background:#f5f5f5;color:#4d4d4c;padding:0.5em;-webkit-text-size-adjust:none}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:0.5}

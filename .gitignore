@@ -1,0 +1,5 @@
+.*
+!/.gitignore
+test
+node_modules
+

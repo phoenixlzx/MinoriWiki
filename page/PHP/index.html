@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Phoenix Nemo">
+    <meta name="description" content="MinoriWiki demo site">
+    <title>
+                PHP - MinoriWiki Demo            </title>
+    <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
+    <script src="/MinoriWiki/assets/highlight.min.js"></script>
+    <base target="_blank">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+                <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
+                        <small>/ PHP</small>
+                    </h1>
+            </div>
+<div class="row">
+<!-- two columns -->
+<div class="col-lg-3 col-md-3">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">About</h3>
+    </div>
+    <div class="panel-body">
+		<p>This is the demo site of <a href="https://github.com/phoenixlzx/MinoriWiki">MinoriWiki</a></p>
+		<p>And a partial mirror of <a href="https://felixc.at">FelixWiki</a>.</p>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="panel-body">
+        <h6><a href="/MinoriWiki/" target="_self">Homepage</a></h6>
+                <h5>Server Configuration</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/DNSMasq" target="_self">
+                                        DNSMasq                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/MongoDB" target="_self">
+                                        MongoDB                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/Nginx" target="_self">
+                                        Nginx                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/PHP" target="_self">
+                                        PHP                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/SSH" target="_self">
+                                        SSH                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/Linux/Security" target="_self">
+                                                            Linux / Linux Security                                    </a>
+            </li>
+                    </ul>
+                <h5>Network Operation</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/DoS" target="_self">
+                                        DoS                                    </a>
+            </li>
+                    </ul>
+                <h5>Network Configuration</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/NAT" target="_self">
+                                        NAT                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/PortForwarding" target="_self">
+                                        PortForwarding                                    </a>
+            </li>
+                    </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Test Page                                    </a>
+            </li>
+                    </ul>
+                <h5>Desktop Related</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Tmux" target="_self">
+                                        Tmux                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/URxvt" target="_self">
+                                        URxvt                                    </a>
+            </li>
+                    </ul>
+                <h5>Arch Linux</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/archlinux-on-loopback" target="_self">
+                                        Install ArchLinux onto loopback filesystem                                    </a>
+            </li>
+                    </ul>
+                        <hr/>
+        <a href="/changelog">Changelog</a>
+            </div>
+</div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12">
+<div class="index-content">
+<div class="row">
+<span class="label label-primary pull-right">Server Configuration</span>
+</div>
+<div class="row">
+<h4><a name="PHP-FPM_Installation_on_Ubuntu_Server" class="anchor" href="#PHP-FPM_Installation_on_Ubuntu_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Ubuntu Server</h4><pre><code>apt-get install python-software-properties
+
+add-apt-repository ppa:nginx/stable
+add-apt-repository ppa:ondrej/php5-oldstable
+
+apt-get update
+apt-get install nginx
+
+apt-get install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-imap php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
+</code></pre><h4><a name="PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" class="anchor" href="#PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM 5.3 Co-Installation on Ubuntu Server</h4><pre><code>PHP_VERSION=5.3.29
+wget http://in1.php.net/distributions/php-$PHP_VERSION.tar.bz2
+tar xvf php-$PHP_VERSION.tar.bz2
+cd php-$PHP_VERSION
+
+sudo apt-get install libxml2-dev libcurl4-openssl-dev libbz2-dev libjpeg-dev libpng12-dev libxpm-dev libfreetype6-dev libpq-dev libmariadbclient-dev pkg-config libssl-dev libmcrypt-dev
+
+# imap not working on Ubuntu 14.04
+./configure --prefix=/opt/php-5.3 --with-pdo-pgsql --with-zlib-dir --enable-mbstring --with-libxml-dir=/usr --enable-soap --enable-calendar --with-curl --with-mcrypt --with-zlib --with-gd --with-pgsql --disable-rpath --enable-inline-optimization --with-bz2 --with-zlib --enable-sockets --enable-sysvsem --enable-sysvshm --enable-pcntl --enable-mbregex --with-mhash --enable-zip --with-pcre-regex --with-mysql --with-pdo-mysql --with-mysqli --with-jpeg-dir=/usr --with-png-dir=/usr --enable-gd-native-ttf --with-openssl --with-fpm-user=www-data --with-fpm-group=www-data --enable-ftp --without-imap --without-imap-ssl --with-kerberos --with-gettext --enable-fpm --with-libdir=/lib/x86_64-linux-gnu --with-libdir=lib
+make
+
+sudo make install
+</code></pre><h4><a name="PHP-FPM_Installation_on_Debian_Server" class="anchor" href="#PHP-FPM_Installation_on_Debian_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Debian Server</h4><pre><code>wget http://www.dotdeb.org/dotdeb.gpg -O - | apt-key add -
+
+# For US-based machines
+tee /etc/apt/sources.list.d/dotdeb.list &lt;&lt; EOF
+deb http://mirror.us.leaseweb.net/dotdeb/ wheezy all
+deb-src http://mirror.us.leaseweb.net/dotdeb/ wheezy all
+EOF
+
+# For China-based machines:
+tee /etc/apt/sources.list.d/dotdeb.list &lt;&lt; EOF
+deb http://dotdeb.90g.org/ stable all
+deb-src http://dotdeb.90g.org/ stable all
+EOF
+
+apt-get update; apt-get install nginx -y
+
+apt-get install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-imap php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl -y
+</code></pre><h4><a name="PHP-FPM_Nginx_Integration" class="anchor" href="#PHP-FPM_Nginx_Integration" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Nginx Integration</h4><pre><code>tee /etc/nginx/conf.d/php.conf &lt;&lt; EOF
+upstream php {
+    server unix:/var/run/php5-fpm.sock;
+}
+EOF
+</code></pre><p>In any site configurations:</p>
+<pre><code>    location ~ \.php?$ {
+        include /etc/nginx/fastcgi_params;
+        fastcgi_index index.php;
+        fastcgi_pass php;
+    }
+</code></pre><h4><a name="Restart_Server" class="anchor" href="#Restart_Server" target="_self"><span class="header-link">#</span></a>&nbsp;Restart Server</h4><pre><code>service nginx restart
+service php5-fpm restart
+</code></pre><h4><a name="FPM_Tuning" class="anchor" href="#FPM_Tuning" target="_self"><span class="header-link">#</span></a>&nbsp;FPM Tuning</h4><h5><a name="For_Low_Memory_Server" class="anchor" href="#For_Low_Memory_Server" target="_self"><span class="header-link">#</span></a>&nbsp;For Low Memory Server</h5><pre><code>pm = dynamic              ;Dynamic allocate child-processes for php-fpm
+pm.max_children = 5       ;Limit number of child-processes
+pm.start_servers = 2      ;Start 2 child-processes when server starts
+pm.min_spare_servers = 2  ;Remain at least 2 when spare
+pm.max_spare_servers = 5  ;Remain at most 5 when spare
+pm.max_requests = 300     ;300 requests the most per child-process(and then exit and start new one)
+</code></pre><p>(The config file is at <code>/etc/php5/fpm/pool.d/www.conf</code> by default)</p>
+<h4><a name="Nginx_Tuning_For_Fastcgi" class="anchor" href="#Nginx_Tuning_For_Fastcgi" target="_self"><span class="header-link">#</span></a>&nbsp;Nginx Tuning For Fastcgi</h4><pre><code>fastcgi_connect_timeout 60;
+fastcgi_send_timeout 180;
+fastcgi_read_timeout 180;
+fastcgi_buffer_size 128k;
+fastcgi_buffers 4 256k;
+fastcgi_busy_buffers_size 256k;
+fastcgi_temp_file_write_size 256k;
+fastcgi_intercept_errors on;
+</code></pre><h4><a name="Remove_::ffff:_From_IPv4_Compatible_Addresses" class="anchor" href="#Remove_::ffff:_From_IPv4_Compatible_Addresses" target="_self"><span class="header-link">#</span></a>&nbsp;Remove ::ffff: From IPv4 Compatible Addresses</h4><pre><code>set $remote_addr_new $remote_addr;
+if ($remote_addr ~* ^::ffff:(.*))
+{
+ set $remote_addr_new $1;
+}
+
+fastcgi_param   REMOTE_ADDR        $remote_addr_new;
+</code></pre><h4><a name="Increase_POST_Size_Limit" class="anchor" href="#Increase_POST_Size_Limit" target="_self"><span class="header-link">#</span></a>&nbsp;Increase POST Size Limit</h4><p>Edit <code>/etc/php5/fpm/php.ini</code>:</p>
+<pre><code>upload_max_filesize = 100M
+post_max_size = 100M
+</code></pre><p>References:</p>
+<ol>
+<li><a href="http://apt-blog.net/best-practise-nginx-php-via-php-fpm-on-ubuntu">http://apt-blog.net/best-practise-nginx-php-via-php-fpm-on-ubuntu</a></li>
+<li><a href="http://wiki.beyondhosting.net/PHP-FPM_and_Nginx">http://wiki.beyondhosting.net/PHP-FPM_and_Nginx</a></li>
+<li><a href="http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE">http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE</a></li>
+<li><a href="http://www.wenzk.com/archives/1239">http://www.wenzk.com/archives/1239</a></li>
+<li><a href="http://hi.baidu.com/lizhm/blog/item/6c7e359bcfd515a2c8eaf434.html">http://hi.baidu.com/lizhm/blog/item/6c7e359bcfd515a2c8eaf434.html</a></li>
+<li><a href="http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/">http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/</a><br><em>Last Update: Wed Mar 25 2015 11:41:01 GMT+0800 (CST)</em>  <a href="/raw/PHP.md">Source File</a></li>
+</ol>
+</div>
+<div class="row">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'minoriwikidemo';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    <div class="footer-text">
+        <p>
+            MinoriWiki Demo using <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+        </p>
+    </div>
+</div>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
