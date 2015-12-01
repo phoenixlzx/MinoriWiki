@@ -15,6 +15,8 @@ MinoriWiki is a static Wiki site Generator [![npm version](https://badge.fury.io
 5. Use `minori note [filename]` to create new note or edit existing one, you can also use `api/data` for filename to create directories
 6. Deploy your files generated under site directory (Default to `wiki`) to production environment with command `minori commit`.
 
+#### Directories
+
 * `source` (defaults to `notes`) directory contains all note markdown files
 * `static` (defaults to `static`) directory will be copied to `site` directory, you could store any static files that may be used in your wiki site.
 * `site` (defaults to `wiki`) directory contains generated site files.
@@ -27,6 +29,7 @@ MinoriWiki is a static Wiki site Generator [![npm version](https://badge.fury.io
 * `minori note [filename]` or `minori n [filename]` - Create or edit note
 * `minori done` or `minori d` - Generate site files
 * `minori commit` or `minori c` - Commit changes and deploy to production environment
+* `minori updatecfg` or `minori u` - Update current `config.yml` file with the new version installed. New config file will written to `config.yml.new`.
 
 ### Theme
 
