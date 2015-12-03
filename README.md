@@ -68,6 +68,7 @@ When parsing changelog page, the commits object is passed:
 ```
 [
     {
+        hash: '2765ac1dea7f8080048d6f603683615b2f2c2c78',
         abbrevHash: '2765ac1',
         subject: 'update test.md',
         committerName: 'foo bar',
@@ -75,6 +76,7 @@ When parsing changelog page, the commits object is passed:
         status: [ 'M' ],
         files: [ 'test.md' ]
     }, {
+        hash: '9bf21ee34231208fd2e24469b7472b54df3954182',
         abbrevHash: '9bf21ee',
         subject: 'update',
         committerName: 'foo bar',
