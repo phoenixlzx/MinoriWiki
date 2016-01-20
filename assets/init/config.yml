@@ -31,13 +31,12 @@ custom:
   time: YYYY-MM-DD HH:mm:ss
   disqus: minoriwiki    # your disqus short link, leave blank to disable comment
   markdown:
-    gfm: true    # github flavored markdown: https://help.github.com/articles/github-flavored-markdown/
-    pedantic: false
-    sanitize: false
-    tables: true
-    breaks: true
-    smartLists: true
-    smartypants: true
+    html: true    # Enable HTML tags in source
+    xhtmlOut: true    # Use '/' to close single tags (<br />)
+    breaks: false    # Convert '\n' in paragraphs into <br> NOTE: some editors may trim tailing spaces so you may need this.
+    langPrefix: 'language-'    # CSS language prefix for fenced blocks
+    linkify: false    # Autoconvert URL-like text to links
+    typographer: false    # Enable some language-neutral replacement + quotes beautification
   mathjax: false    # enable MathJax TeX support, you need markdown.sanitize set to false to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: vim    # auto open your note after command
