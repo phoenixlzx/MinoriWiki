@@ -1,6 +1,6 @@
 {
   "name": "minori",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "Minori is a static Wiki site generator",
   "author": "Phoenix Nemo <i@phoenixlzx.com>",
   "bin": {
@@ -24,7 +24,6 @@
     "ejs": "2.3.1",
     "gitlog": "^2.1.2",
     "js-yaml": "3.2.7",
-    "marked": "0.3.5",
     "mathjax-node": "^0.4.0",
     "minimist": "1.1.1",
     "mkdirp": "0.5.0",
