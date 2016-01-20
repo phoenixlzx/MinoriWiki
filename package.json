@@ -31,7 +31,8 @@
     "ncp": "2.0.0",
     "pangunode": "^0.1.0",
     "prompt": "^0.2.14",
-    "recursive-readdir": "1.2.1"
+    "recursive-readdir": "1.2.1",
+    "remarkable": "^1.6.1"
   },
   "preferGlobal": true,
   "private": false,
