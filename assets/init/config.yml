@@ -37,6 +37,11 @@ custom:
     langPrefix: 'language-'    # CSS language prefix for fenced blocks
     linkify: false    # Autoconvert URL-like text to links
     typographer: false    # Enable some language-neutral replacement + quotes beautification
+    sup_sub: true    # superscripts and subscripts
+    abbr: true    # abbreviations
+    footnote: true    # footnote
+    ins: false    # EXPERIMENTAL ++inseted text++
+    mark: false    # EXPERIMENTAL ==marked text==
   mathjax: false    # enable MathJax TeX support, you need markdown.sanitize set to false to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: vim    # auto open your note after command
