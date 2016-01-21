@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,14 +119,19 @@
 <span class="label label-primary pull-right">Server Configuration</span>
 </div>
 <div class="row">
-<h4><a name="Reset_Root_Password" class="anchor" href="#Reset_Root_Password" target="_self"><span class="header-link">#</span></a>&nbsp;Reset Root Password</h4><p>Add this to your (grub’s kernel line or grub2’s linux line) and boot:</p>
+<h4><a href="#Reset_Root_Password" name="Reset_Root_Password" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Reset Root Password</h4>
+<p>Add this to your (grub's kernel line or grub2's linux line) and boot:</p>
 <pre><code>init=/bin/bash
-</code></pre><p>Then remount the filesystem and just use passwd to reset the root password:</p>
+</code></pre>
+<p>Then remount the filesystem and just use passwd to reset the root password:</p>
 <pre><code>mount -o remount,rw /
 passwd
-</code></pre><h4><a name="Sudo_Without_Password" class="anchor" href="#Sudo_Without_Password" target="_self"><span class="header-link">#</span></a>&nbsp;Sudo Without Password</h4><p><code>/etc/sudoers</code></p>
+</code></pre>
+<h4><a href="#Sudo_Without_Password" name="Sudo_Without_Password" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Sudo Without Password</h4>
+<p><code>/etc/sudoers</code></p>
 <pre><code>username ALL=(ALL) NOPASSWD: ALL
-</code></pre><p><em>Last Update: Tue Nov 10 2015 03:00:44 GMT+0800 (CST)</em>  <a href="/raw/Linux/Security.md">Source File</a></p>
+</code></pre>
+<p><em>Last Update: Tue Nov 10 2015 03:00:44 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/Linux/Security.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

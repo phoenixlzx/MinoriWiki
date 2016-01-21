@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -134,7 +134,8 @@ vi /mnt/etc/rc.conf
 vi /mnt/etc/mkinitcpio.conf
 mv /mnt/boot /host/diskimg/archboot
 ln -s /host/diskimg/archboot /mnt/boot
-</code></pre><p><code>/mnt/lib/initcpio/hooks/looproot</code></p>
+</code></pre>
+<p><code>/mnt/lib/initcpio/hooks/looproot</code></p>
 <pre><code># vim:set ft=sh:
 run_hook ()
 {
@@ -148,7 +149,8 @@ run_hook ()
     mount -t ext4 /host/diskimg/archlinux.img /new_root
     mount --bind /host /new_root/host
 }
-</code></pre><p><code>/mnt/lib/initcpio/install/looproot</code></p>
+</code></pre>
+<p><code>/mnt/lib/initcpio/install/looproot</code></p>
 <pre><code>build() {
         SCRIPT=&quot;looproot&quot;
 }
@@ -159,10 +161,11 @@ help() {
 }
 
 # vim: set ft=sh ts=4 sw=4 et:
-</code></pre><p><code>/mnt/etc/rc.d/functions.d/omitntfs</code></p>
+</code></pre>
+<p><code>/mnt/etc/rc.d/functions.d/omitntfs</code></p>
 <pre><code>omitntfs() {
     sync
-    add_omit_pids $(fuser /dev/sda5 2&gt;/dev/null | awk &#39;-F &#39; &#39;{ print $1 }&#39;)
+    add_omit_pids $(fuser /dev/sda5 2&gt;/dev/null | awk '-F ' '{ print $1 }')
 }
 
 # remove fuseblk from the original NETFS variable
@@ -170,7 +173,8 @@ NETFS=&quot;nfs,nfs4,smbfs,cifs,codafs,ncpfs,shfs,fuse,glusterfs,davfs,fuse.glus
 
 add_hook shutdown_prekillall omitntfs
 add_hook single_prekillall omitntfs
-</code></pre><p><code>/mnt/etc/mkinitcpio.conf</code> (diff)</p>
+</code></pre>
+<p><code>/mnt/etc/mkinitcpio.conf</code> (diff)</p>
 <pre><code>7c7
 &lt; MODULES=&quot;&quot;
 ---
@@ -183,27 +187,32 @@ add_hook single_prekillall omitntfs
 &lt; HOOKS=&quot;base udev autodetect pata scsi sata filesystems usbinput fsck&quot;
 ---
 &gt; HOOKS=&quot;base udev autodetect pata scsi sata filesystems usbinput looproot fsck&quot;
-</code></pre><p><code>/mnt/etc/fstab</code></p>
+</code></pre>
+<p><code>/mnt/etc/fstab</code></p>
 <pre><code># 
 # /etc/fstab: static file system information
 #
 # &lt;file system&gt; &lt;dir&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
 /dev/loop0      /       ext4    loop            0       1
 /dev/sda5       /host   ntfs    defaults        0       0
-</code></pre><pre><code>mkdir /mnt/host
+</code></pre>
+<pre><code>mkdir /mnt/host
 for i in dev proc sys host; do mount --bind /$i /mnt/$i; done
 modprobe dm-mod # You need this if you want to install GRUB
 chroot /mnt
 passwd
 mkinitcpio -p linux
-</code></pre><p>(Install the bootloader)</p>
+</code></pre>
+<p>(Install the bootloader)</p>
 <p>After installing the bootloader</p>
 <pre><code>exit
 umount /mnt/dev /mnt/proc /mnt/sys /mnt/host /mnt /host
 reboot
-</code></pre><p>After reboot</p>
+</code></pre>
+<p>After reboot</p>
 <pre><code>exit
-</code></pre><p><em>Last Update: Tue Nov 10 2015 03:02:53 GMT+0800 (CST)</em>  <a href="/raw/archlinux-on-loopback.md">Source File</a></p>
+</code></pre>
+<p><em>Last Update: Tue Nov 10 2015 03:02:53 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/archlinux-on-loopback.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

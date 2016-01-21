@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,7 +119,8 @@
 <span class="label label-primary pull-right">Server Configuration</span>
 </div>
 <div class="row">
-<h4><a name="PHP-FPM_Installation_on_Ubuntu_Server" class="anchor" href="#PHP-FPM_Installation_on_Ubuntu_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Ubuntu Server</h4><pre><code>apt-get install python-software-properties
+<h4><a href="#PHP-FPM_Installation_on_Ubuntu_Server" name="PHP-FPM_Installation_on_Ubuntu_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Ubuntu Server</h4>
+<pre><code>apt-get install python-software-properties
 
 add-apt-repository ppa:nginx/stable
 add-apt-repository ppa:ondrej/php5-oldstable
@@ -128,7 +129,9 @@ apt-get update
 apt-get install nginx
 
 apt-get install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-imap php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl
-</code></pre><h4><a name="PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" class="anchor" href="#PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM 5.3 Co-Installation on Ubuntu Server</h4><pre><code>PHP_VERSION=5.3.29
+</code></pre>
+<h4><a href="#PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" name="PHP-FPM_5.3_Co-Installation_on_Ubuntu_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;PHP-FPM 5.3 Co-Installation on Ubuntu Server</h4>
+<pre><code>PHP_VERSION=5.3.29
 wget http://in1.php.net/distributions/php-$PHP_VERSION.tar.bz2
 tar xvf php-$PHP_VERSION.tar.bz2
 cd php-$PHP_VERSION
@@ -140,7 +143,9 @@ sudo apt-get install libxml2-dev libcurl4-openssl-dev libbz2-dev libjpeg-dev lib
 make
 
 sudo make install
-</code></pre><h4><a name="PHP-FPM_Installation_on_Debian_Server" class="anchor" href="#PHP-FPM_Installation_on_Debian_Server" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Debian Server</h4><pre><code>wget http://www.dotdeb.org/dotdeb.gpg -O - | apt-key add -
+</code></pre>
+<h4><a href="#PHP-FPM_Installation_on_Debian_Server" name="PHP-FPM_Installation_on_Debian_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;PHP-FPM Installation on Debian Server</h4>
+<pre><code>wget http://www.dotdeb.org/dotdeb.gpg -O - | apt-key add -
 
 # For US-based machines
 tee /etc/apt/sources.list.d/dotdeb.list &lt;&lt; EOF
@@ -157,27 +162,37 @@ EOF
 apt-get update; apt-get install nginx -y
 
 apt-get install php5-cgi php5-mysql php5-fpm php5-curl php5-gd php5-idn php-pear php5-imap php5-mcrypt php5-mhash php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl -y
-</code></pre><h4><a name="PHP-FPM_Nginx_Integration" class="anchor" href="#PHP-FPM_Nginx_Integration" target="_self"><span class="header-link">#</span></a>&nbsp;PHP-FPM Nginx Integration</h4><pre><code>tee /etc/nginx/conf.d/php.conf &lt;&lt; EOF
+</code></pre>
+<h4><a href="#PHP-FPM_Nginx_Integration" name="PHP-FPM_Nginx_Integration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;PHP-FPM Nginx Integration</h4>
+<pre><code>tee /etc/nginx/conf.d/php.conf &lt;&lt; EOF
 upstream php {
     server unix:/var/run/php5-fpm.sock;
 }
 EOF
-</code></pre><p>In any site configurations:</p>
+</code></pre>
+<p>In any site configurations:</p>
 <pre><code>    location ~ \.php?$ {
         include /etc/nginx/fastcgi_params;
         fastcgi_index index.php;
         fastcgi_pass php;
     }
-</code></pre><h4><a name="Restart_Server" class="anchor" href="#Restart_Server" target="_self"><span class="header-link">#</span></a>&nbsp;Restart Server</h4><pre><code>service nginx restart
+</code></pre>
+<h4><a href="#Restart_Server" name="Restart_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Restart Server</h4>
+<pre><code>service nginx restart
 service php5-fpm restart
-</code></pre><h4><a name="FPM_Tuning" class="anchor" href="#FPM_Tuning" target="_self"><span class="header-link">#</span></a>&nbsp;FPM Tuning</h4><h5><a name="For_Low_Memory_Server" class="anchor" href="#For_Low_Memory_Server" target="_self"><span class="header-link">#</span></a>&nbsp;For Low Memory Server</h5><pre><code>pm = dynamic              ;Dynamic allocate child-processes for php-fpm
+</code></pre>
+<h4><a href="#FPM_Tuning" name="FPM_Tuning" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;FPM Tuning</h4>
+<h5><a href="#For_Low_Memory_Server" name="For_Low_Memory_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;For Low Memory Server</h5>
+<pre><code>pm = dynamic              ;Dynamic allocate child-processes for php-fpm
 pm.max_children = 5       ;Limit number of child-processes
 pm.start_servers = 2      ;Start 2 child-processes when server starts
 pm.min_spare_servers = 2  ;Remain at least 2 when spare
 pm.max_spare_servers = 5  ;Remain at most 5 when spare
 pm.max_requests = 300     ;300 requests the most per child-process(and then exit and start new one)
-</code></pre><p>(The config file is at <code>/etc/php5/fpm/pool.d/www.conf</code> by default)</p>
-<h4><a name="Nginx_Tuning_For_Fastcgi" class="anchor" href="#Nginx_Tuning_For_Fastcgi" target="_self"><span class="header-link">#</span></a>&nbsp;Nginx Tuning For Fastcgi</h4><pre><code>fastcgi_connect_timeout 60;
+</code></pre>
+<p>(The config file is at <code>/etc/php5/fpm/pool.d/www.conf</code> by default)</p>
+<h4><a href="#Nginx_Tuning_For_Fastcgi" name="Nginx_Tuning_For_Fastcgi" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Nginx Tuning For Fastcgi</h4>
+<pre><code>fastcgi_connect_timeout 60;
 fastcgi_send_timeout 180;
 fastcgi_read_timeout 180;
 fastcgi_buffer_size 128k;
@@ -185,25 +200,31 @@ fastcgi_buffers 4 256k;
 fastcgi_busy_buffers_size 256k;
 fastcgi_temp_file_write_size 256k;
 fastcgi_intercept_errors on;
-</code></pre><h4><a name="Remove_::ffff:_From_IPv4_Compatible_Addresses" class="anchor" href="#Remove_::ffff:_From_IPv4_Compatible_Addresses" target="_self"><span class="header-link">#</span></a>&nbsp;Remove ::ffff: From IPv4 Compatible Addresses</h4><pre><code>set $remote_addr_new $remote_addr;
+</code></pre>
+<h4><a href="#Remove_::ffff:_From_IPv4_Compatible_Addresses" name="Remove_::ffff:_From_IPv4_Compatible_Addresses" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Remove ::ffff: From IPv4 Compatible Addresses</h4>
+<pre><code>set $remote_addr_new $remote_addr;
 if ($remote_addr ~* ^::ffff:(.*))
 {
  set $remote_addr_new $1;
 }
 
 fastcgi_param   REMOTE_ADDR        $remote_addr_new;
-</code></pre><h4><a name="Increase_POST_Size_Limit" class="anchor" href="#Increase_POST_Size_Limit" target="_self"><span class="header-link">#</span></a>&nbsp;Increase POST Size Limit</h4><p>Edit <code>/etc/php5/fpm/php.ini</code>:</p>
+</code></pre>
+<h4><a href="#Increase_POST_Size_Limit" name="Increase_POST_Size_Limit" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Increase POST Size Limit</h4>
+<p>Edit <code>/etc/php5/fpm/php.ini</code>:</p>
 <pre><code>upload_max_filesize = 100M
 post_max_size = 100M
-</code></pre><p>References:</p>
+</code></pre>
+<p>References:</p>
 <ol>
 <li><a href="http://apt-blog.net/best-practise-nginx-php-via-php-fpm-on-ubuntu">http://apt-blog.net/best-practise-nginx-php-via-php-fpm-on-ubuntu</a></li>
 <li><a href="http://wiki.beyondhosting.net/PHP-FPM_and_Nginx">http://wiki.beyondhosting.net/PHP-FPM_and_Nginx</a></li>
 <li><a href="http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE">http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE</a></li>
 <li><a href="http://www.wenzk.com/archives/1239">http://www.wenzk.com/archives/1239</a></li>
 <li><a href="http://hi.baidu.com/lizhm/blog/item/6c7e359bcfd515a2c8eaf434.html">http://hi.baidu.com/lizhm/blog/item/6c7e359bcfd515a2c8eaf434.html</a></li>
-<li><a href="http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/">http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/</a><br><em>Last Update: Wed Mar 25 2015 11:41:01 GMT+0800 (CST)</em>  <a href="/raw/PHP.md">Source File</a></li>
+<li><a href="http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/">http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/</a></li>
 </ol>
+<p><em>Last Update: Wed Mar 25 2015 11:41:01 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/PHP.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

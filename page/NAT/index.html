@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,13 +119,21 @@
 <span class="label label-primary pull-right">Network Configuration</span>
 </div>
 <div class="row">
-<h4><a name="Enable_IP_Forwarding_First" class="anchor" href="#Enable_IP_Forwarding_First" target="_self"><span class="header-link">#</span></a>&nbsp;Enable IP Forwarding First</h4><pre><code>sed -i &#39;s/.*net\.ipv4\.ip_forward.*/net.ipv4.ip_forward = 1/&#39; /etc/sysctl.conf
+<h4><a href="#Enable_IP_Forwarding_First" name="Enable_IP_Forwarding_First" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Enable IP Forwarding First</h4>
+<pre><code>sed -i 's/.*net\.ipv4\.ip_forward.*/net.ipv4.ip_forward = 1/' /etc/sysctl.conf
 sysctl -p
-</code></pre><h4><a name="NAT_using_iptables" class="anchor" href="#NAT_using_iptables" target="_self"><span class="header-link">#</span></a>&nbsp;NAT using iptables</h4><h5><a name="Recommended_Way_(If_IP_is_static)" class="anchor" href="#Recommended_Way_(If_IP_is_static)" target="_self"><span class="header-link">#</span></a>&nbsp;Recommended Way (If IP is static)</h5><pre><code>iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -j SNAT --to-source &lt;IP&gt;
-</code></pre><h5><a name="Another_Way_(OpenVZ_won’t_work_this_way)" class="anchor" href="#Another_Way_(OpenVZ_won’t_work_this_way)" target="_self"><span class="header-link">#</span></a>&nbsp;Another Way (OpenVZ won’t work this way)</h5><pre><code>iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -j MASQUERADE
-</code></pre><p>Or if you want to MASQUERADE all interfaces:</p>
+</code></pre>
+<h4><a href="#NAT_using_iptables" name="NAT_using_iptables" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;NAT using iptables</h4>
+<h5><a href="#Recommended_Way_(If_IP_is_static)" name="Recommended_Way_(If_IP_is_static)" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Recommended Way (If IP is static)</h5>
+<pre><code>iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -j SNAT --to-source &lt;IP&gt;
+</code></pre>
+<h5><a href="#Another_Way_(OpenVZ_won't_work_this_way)" name="Another_Way_(OpenVZ_won't_work_this_way)" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Another Way (OpenVZ won't work this way)</h5>
+<pre><code>iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -j MASQUERADE
+</code></pre>
+<p>Or if you want to MASQUERADE all interfaces:</p>
 <pre><code>iptables -t nat -A POSTROUTING ! -o lo -j MASQUERADE
-</code></pre><p><em>Last Update: Wed Mar 25 2015 11:43:42 GMT+0800 (CST)</em>  <a href="/raw/NAT.md">Source File</a></p>
+</code></pre>
+<p><em>Last Update: Wed Mar 25 2015 11:43:42 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/NAT.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

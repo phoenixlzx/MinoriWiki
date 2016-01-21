@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,10 +119,11 @@
 <span class="label label-primary pull-right">Desktop Related</span>
 </div>
 <div class="row">
-<h4><a name="My_Configuration" class="anchor" href="#My_Configuration" target="_self"><span class="header-link">#</span></a>&nbsp;My Configuration</h4><pre><code>set -g prefix ^a
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>set -g prefix ^a
 unbind ^b
 bind a send-prefix
-unbind &#39;&quot;&#39;
+unbind '&quot;'
 bind - splitw -v # horizontal split
 unbind %
 bind | splitw -h # vertical split
@@ -137,12 +138,12 @@ bind ^l resizep -R 10
 bind ^u swapp -U # swap with upper pane
 bind ^d swapp -D # swap with lower pane
 
-set -g status-right &quot;#[fg=green]#(date)#[default] • #[fg=green]#(cut -d &#39; &#39; -f 1-3 /proc/loadavg)#[default]&quot;
+set -g status-right &quot;#[fg=green]#(date)#[default] • #[fg=green]#(cut -d ' ' -f 1-3 /proc/loadavg)#[default]&quot;
 set -g status-bg black
 set -g status-fg yellow
 setw -g mode-keys vi
 setw -g mode-mouse off
-set -g terminal-overrides &#39;xterm*:smcup@:rmcup@&#39;
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 set -g base-index 1
 #set -s escape-time 0
 setw -g aggressive-resize on
@@ -222,7 +223,8 @@ set -g default-terminal &quot;xterm-color&quot;
 bind C-c run -b &quot;tmux show-buffer | xclip -i -selection clipboard&quot;
 #Copy CLIPBOARD to tmux paste buffer and paste tmux paste buffer
 bind C-v run &quot;tmux set-buffer \&quot;$(xclip -o -selection clipboard)\&quot;; tmux paste-buffer&quot;
-</code></pre><p><em>Last Update: Wed Mar 25 2015 11:48:12 GMT+0800 (CST)</em>  <a href="/raw/Tmux.md">Source File</a></p>
+</code></pre>
+<p><em>Last Update: Wed Mar 25 2015 11:48:12 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/Tmux.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

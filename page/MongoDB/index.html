@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,25 +119,34 @@
 <span class="label label-primary pull-right">Server Configuration</span>
 </div>
 <div class="row">
-<h4><a name="Installation" class="anchor" href="#Installation" target="_self"><span class="header-link">#</span></a>&nbsp;Installation</h4><pre><code>sudo add-apt-repository &#39;deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen&#39;
+<h4><a href="#Installation" name="Installation" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Installation</h4>
+<pre><code>sudo add-apt-repository 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
 sudo apt-get update
 sudo apt-get install mongodb-10gen
-</code></pre><h4><a name="Authentication_(For_MongoDB_&gt;=_2.4)" class="anchor" href="#Authentication_(For_MongoDB_&gt;=_2.4)" target="_self"><span class="header-link">#</span></a>&nbsp;Authentication (For MongoDB &gt;= 2.4)</h4><h5><a name="Add_A_User_Administrator_as_Per_Recommended_by_MongoDB" class="anchor" href="#Add_A_User_Administrator_as_Per_Recommended_by_MongoDB" target="_self"><span class="header-link">#</span></a>&nbsp;Add A User Administrator as Per Recommended by MongoDB</h5><pre><code>$ mongo
-&gt; db = db.getSiblingDB(&#39;admin&#39;)
+</code></pre>
+<h4><a href="#Authentication_(For_MongoDB_>=_2.4)" name="Authentication_(For_MongoDB_>=_2.4)" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Authentication (For MongoDB&gt;= 2.4)</h4>
+<h5><a href="#Add_A_User_Administrator_as_Per_Recommended_by_MongoDB" name="Add_A_User_Administrator_as_Per_Recommended_by_MongoDB" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Add A User Administrator as Per Recommended by MongoDB</h5>
+<pre><code>$ mongo
+&gt; db = db.getSiblingDB('admin')
 &gt; db.addUser({user: &quot;username&quot;, pwd: &quot;password&quot;, roles: [&quot;userAdminAnyDatabase&quot;]})
-</code></pre><h5><a name="Add_A_FULL_PRIVILEGED_User_(For_Unlocking_Full_Functionality_of_RockMongo,_etc)" class="anchor" href="#Add_A_FULL_PRIVILEGED_User_(For_Unlocking_Full_Functionality_of_RockMongo,_etc)" target="_self"><span class="header-link">#</span></a>&nbsp;Add A FULL PRIVILEGED User (For Unlocking Full Functionality of RockMongo, etc)</h5><pre><code>$ mongo
-&gt; db = db.getSiblingDB(&#39;admin&#39;)
+</code></pre>
+<h5><a href="#Add_A_FULL_PRIVILEGED_User_(For_Unlocking_Full_Functionality_of_RockMongo,_etc)" name="Add_A_FULL_PRIVILEGED_User_(For_Unlocking_Full_Functionality_of_RockMongo,_etc)" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Add A FULL PRIVILEGED User (For Unlocking Full Functionality of RockMongo, etc)</h5>
+<pre><code>$ mongo
+&gt; db = db.getSiblingDB('admin')
 &gt; db.addUser({user: &quot;username&quot;, pwd: &quot;password&quot;, roles: [&quot;dbAdminAnyDatabase&quot;, &quot;userAdminAnyDatabase&quot;, &quot;readWriteAnyDatabase&quot;, &quot;clusterAdmin&quot;]})
-</code></pre><h4><a name="Authentication_(For_MongoDB_&lt;_2.4)" class="anchor" href="#Authentication_(For_MongoDB_&lt;_2.4)" target="_self"><span class="header-link">#</span></a>&nbsp;Authentication (For MongoDB &lt; 2.4)</h4><pre><code>$ mongo
+</code></pre>
+<h4><a href="#Authentication_(For_MongoDB_<_2.4)" name="Authentication_(For_MongoDB_<_2.4)" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Authentication (For MongoDB &lt; 2.4)</h4>
+<pre><code>$ mongo
 &gt; use admin
 &gt; db.addUser(&quot;username&quot;, &quot;password&quot;)
-</code></pre><p>References:</p>
+</code></pre>
+<p>References:</p>
 <ol>
 <li><a href="http://www.mongodb.org/display/DOCS/Security+and+Authentication">http://www.mongodb.org/display/DOCS/Security+and+Authentication</a></li>
 <li><a href="http://www.mongodb.org/display/DOCS/Security+and+Authentication">http://www.mongodb.org/display/DOCS/Security+and+Authentication</a></li>
 </ol>
-<p><em>Last Update: Wed Mar 25 2015 12:28:29 GMT+0800 (CST)</em>  <a href="/raw/MongoDB.md">Source File</a></p>
+<p><em>Last Update: Wed Mar 25 2015 12:28:29 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/MongoDB.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

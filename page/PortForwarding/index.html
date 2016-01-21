@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,8 +119,10 @@
 <span class="label label-primary pull-right">Network Configuration</span>
 </div>
 <div class="row">
-<h4><a name="Port_forwarding_using_iptables" class="anchor" href="#Port_forwarding_using_iptables" target="_self"><span class="header-link">#</span></a>&nbsp;Port forwarding using iptables</h4><pre><code>iptables -t nat -A PREROUTING -p tcp -m tcp --dport &lt;port&gt; -j DNAT --to-destination &lt;host&gt;:&lt;port&gt;
-</code></pre><p><em>Last Update: Wed Mar 25 2015 11:42:02 GMT+0800 (CST)</em>  <a href="/raw/PortForwarding.md">Source File</a></p>
+<h4><a href="#Port_forwarding_using_iptables" name="Port_forwarding_using_iptables" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Port forwarding using iptables</h4>
+<pre><code>iptables -t nat -A PREROUTING -p tcp -m tcp --dport &lt;port&gt; -j DNAT --to-destination &lt;host&gt;:&lt;port&gt;
+</code></pre>
+<p><em>Last Update: Wed Mar 25 2015 11:42:02 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/PortForwarding.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

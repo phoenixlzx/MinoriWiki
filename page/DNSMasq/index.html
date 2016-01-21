@@ -83,13 +83,6 @@
                                         PortForwarding                                    </a>
             </li>
                     </ul>
-                <h5>Uncategoried</h5>
-        <ul class="list-unstyled">
-                        <li>
-                <a href="/MinoriWiki/page/Test-Page" target="_self">
-                                        Test Page                                    </a>
-            </li>
-                    </ul>
                 <h5>Desktop Related</h5>
         <ul class="list-unstyled">
                         <li>
@@ -108,8 +101,15 @@
                                         Install ArchLinux onto loopback filesystem                                    </a>
             </li>
                     </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
                         <hr/>
-        <a href="/changelog">Changelog</a>
+        <a href="/MinoriWiki/changelog">Changelog</a>
             </div>
 </div>
 </div>
@@ -119,20 +119,29 @@
 <span class="label label-primary pull-right">Server Configuration</span>
 </div>
 <div class="row">
-<h4><a name="DNS_Server" class="anchor" href="#DNS_Server" target="_self"><span class="header-link">#</span></a>&nbsp;DNS Server</h4><pre><code>no-resolv
+<h4><a href="#DNS_Server" name="DNS_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DNS Server</h4>
+<pre><code>no-resolv
 no-poll
 conf-dir=/etc/dnsmasq.d
 server=8.8.4.4
 server=8.8.8.8
-</code></pre><h4><a name="Bogus_NXDOMAIN_for_OpenDNS" class="anchor" href="#Bogus_NXDOMAIN_for_OpenDNS" target="_self"><span class="header-link">#</span></a>&nbsp;Bogus NXDOMAIN for OpenDNS</h4><pre><code>#blocked nxdomain opendns.com site 67.215.65.132
+</code></pre>
+<h4><a href="#Bogus_NXDOMAIN_for_OpenDNS" name="Bogus_NXDOMAIN_for_OpenDNS" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Bogus NXDOMAIN for OpenDNS</h4>
+<pre><code>#blocked nxdomain opendns.com site 67.215.65.132
 bogus-nxdomain=67.215.65.132
-</code></pre><h4><a name="DHCP_Server" class="anchor" href="#DHCP_Server" target="_self"><span class="header-link">#</span></a>&nbsp;DHCP Server</h4><pre><code>dhcp-range=192.168.0.100,192.168.0.200,12h
+</code></pre>
+<h4><a href="#DHCP_Server" name="DHCP_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DHCP Server</h4>
+<pre><code>dhcp-range=192.168.0.100,192.168.0.200,12h
 dhcp-option=option:router,192.168.0.1
 dhcp-option=option:dns-server,192.168.0.1
-</code></pre><h4><a name="DHCP_Whitelist" class="anchor" href="#DHCP_Whitelist" target="_self"><span class="header-link">#</span></a>&nbsp;DHCP Whitelist</h4><pre><code>dhcp-ignore=net:!whitelist
+</code></pre>
+<h4><a href="#DHCP_Whitelist" name="DHCP_Whitelist" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DHCP Whitelist</h4>
+<pre><code>dhcp-ignore=net:!whitelist
 dhcp-host=&lt;MAC-ADDRESS&gt;,net:whitelist
-</code></pre><h4><a name="Auto_DNS_Configuration_For_Websites_Located_in_China" class="anchor" href="#Auto_DNS_Configuration_For_Websites_Located_in_China" target="_self"><span class="header-link">#</span></a>&nbsp;Auto DNS Configuration For Websites Located in China</h4><p>Moved to github: <a href="https://github.com/felixonmars/dnsmasq-china-list">https://github.com/felixonmars/dnsmasq-china-list</a></p>
-<p><em>Last Update: Tue Dec 01 2015 16:23:35 GMT+0800 (CST)</em>  <a href="/raw/DNSMasq.md">Source File</a></p>
+</code></pre>
+<h4><a href="#Auto_DNS_Configuration_For_Websites_Located_in_China" name="Auto_DNS_Configuration_For_Websites_Located_in_China" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Auto DNS Configuration For Websites Located in China</h4>
+<p>Moved to github: <a href="https://github.com/felixonmars/dnsmasq-china-list">https://github.com/felixonmars/dnsmasq-china-list</a></p>
+<p><em>Last Update: Tue Dec 01 2015 16:23:35 GMT+0800 (CST)</em>  <a href="/MinoriWiki/raw/DNSMasq.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>
