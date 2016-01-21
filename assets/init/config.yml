@@ -51,3 +51,9 @@ deploy:
   repo: git@example.com:wiki/site.git
   branch: gh-pages
   cname: your.domain.com    # if you want to deploy site on github you probably want this
+  s3:
+    enabled: false
+    bucket: your-bucket-name
+    region: us-west-1
+    accessKeyId: yourapikey
+    accessKeySecret: yourapisecret
