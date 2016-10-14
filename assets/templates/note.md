@@ -1,5 +1,5 @@
-title: Page title
-category: Uncategoried
-time: 1471234567890
+title: [% title %]
+category: [% category %]
+time: [% time %]
 ---
 Content of the page, **markdown** enabled.
