@@ -7,7 +7,7 @@
     <meta name="author" content="Phoenix Nemo">
     <meta name="description" content="MinoriWiki demo site">
     <title>
-                Linux Security - MinoriWiki Demo            </title>
+                URxvt - MinoriWiki Demo            </title>
     <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
     <script src="/MinoriWiki/assets/highlight.min.js"></script>
@@ -17,7 +17,7 @@
 <div class="container">
     <div class="page-header">
                 <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
-                                    <small>/ Linux / Linux Security</small>
+                        <small>/ URxvt</small>
                     </h1>
             </div>
 <div class="row">
@@ -124,22 +124,45 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
 <div class="index-content">
 <div class="row">
-<span class="label label-primary pull-right">Server Configuration</span>
+<span class="label label-primary pull-right">Desktop Related</span>
 </div>
 <div class="row">
-<h4><a href="#Reset_Root_Password" name="Reset_Root_Password" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Reset Root Password</h4>
-<p>Add this to your (grub's kernel line or grub2's linux line) and boot:</p>
-<pre><code>init=/bin/bash
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>URxvt.depth:    32
+URxvt.background:       [85]#000000
+URxvt.foreground:       #ffffff
+URxvt.colorBD:  Gray95
+URxvt.colorUL:  Green
+URxvt.scrollBar:        False
+URxvt.mouseWheelScrollPage:     False
+URxvt.cursorBlink:      True
+URxvt.saveLines:        3000
+URxvt.borderLess:       False
+URxvt.font:     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*,xft:wenquanyi bitmap song:medium
+URxvt.boldFont: xft:terminusmod:bold,xft:wenquanyi bitmap song:bold
+urxvt.color0:   #2e3436
+urxvt.color1:   #cc0000
+urxvt.color2:   #4e9a06
+urxvt.color3:   #c4a000
+urxvt.color4:   #3465a4
+urxvt.color5:   #75507b
+urxvt.color6:   #06989a
+urxvt.color7:   #d3d7cf
+urxvt.color8:   #555753
+urxvt.color9:   #ef2929
+urxvt.color10:  #8ae234
+urxvt.color11:  #fce94f
+urxvt.color12:  #729fcf
+urxvt.color13:  #ad7fa8
+urxvt.color14:  #34e2e2
+urxvt.color15:  #eeeeec
+urxvt.iconFile: /usr/share/icons/clarity-canus/scalable/apps/terminal.svg
+URxvt.preeditType:      OverTheSpot
+URxvt.inputMethod:      fcitx
+URxvt.iso14755: False
+
 </code></pre>
-<p>Then remount the filesystem and just use passwd to reset the root password:</p>
-<pre><code>mount -o remount,rw /
-passwd
-</code></pre>
-<h4><a href="#Sudo_Without_Password" name="Sudo_Without_Password" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Sudo Without Password</h4>
-<p><code>/etc/sudoers</code></p>
-<pre><code>username ALL=(ALL) NOPASSWD: ALL
-</code></pre>
-<p><em>Last Update: Fri Oct 14 2016 23:45:40 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/Linux/Security.md">Source File</a></p>
+<p><em>Last Update: Fri Oct 14 2016 23:45:36 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/URxvt.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>
