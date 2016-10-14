@@ -9,7 +9,7 @@
         <ul class="list-unstyled">
             <% category.pages.forEach(function(p) { %>
             <li>
-                <a href="<%= config['base'].path %>page<%= p.link %>/" target="_self">
+                <a href="<%= config['base'].path %><%= config['dir'].page %><%= p.link %>/" target="_self">
                     <% if (p.link.lastIndexOf('/') !== 0) { %>
                     <% var prelink = p.link.split('/')[1] %>
                     <%= prelink %> / <%= p.title %>

@@ -25,6 +25,7 @@ dir:
   static: static    # static files will be copied to <site root path>/static, to help you link any static file in articles
   site: wiki    # generated site files which are ready to be deployed
   raw: raw    # raw (source) note file in website directory
+  page: page    # pages will write under this directory, e.g., /page/some-title, leave plank will write all pages under root
 
 # Custom
 custom:
