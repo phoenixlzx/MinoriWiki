@@ -31,6 +31,7 @@ dir:
 custom:
   time: YYYY-MM-DD HH:mm:ss
   disqus: minoriwiki    # your disqus short link, leave blank to disable comment
+  category: Uncategoried    # default category when creating new page
   markdown:
     html: true    # Enable HTML tags in source
     xhtmlOut: true    # Use '/' to close single tags (<br />)
