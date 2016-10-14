@@ -53,6 +53,7 @@ The following variables are passed to EJS:
 				"title": "page title",
 				"link": "page-file-name",
 				"category": "uncategoried",
+				"time": 1471234567890,
 				"content": "parsed html"
 			},
 			...
