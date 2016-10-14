@@ -7,7 +7,7 @@
     <meta name="author" content="Phoenix Nemo">
     <meta name="description" content="MinoriWiki demo site">
     <title>
-                DNSMasq - MinoriWiki Demo            </title>
+                URxvt - MinoriWiki Demo            </title>
     <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
     <script src="/MinoriWiki/assets/highlight.min.js"></script>
@@ -17,7 +17,7 @@
 <div class="container">
     <div class="page-header">
                 <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
-                        <small>/ DNSMasq</small>
+                        <small>/ URxvt</small>
                     </h1>
             </div>
 <div class="row">
@@ -120,32 +120,45 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
 <div class="index-content">
 <div class="row">
-<span class="label label-primary pull-right">Server Configuration</span>
+<span class="label label-primary pull-right">Desktop Related</span>
 </div>
 <div class="row">
-<h4><a href="#DNS_Server" name="DNS_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DNS Server</h4>
-<pre><code>no-resolv
-no-poll
-conf-dir=/etc/dnsmasq.d
-server=8.8.4.4
-server=8.8.8.8
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>URxvt.depth:    32
+URxvt.background:       [85]#000000
+URxvt.foreground:       #ffffff
+URxvt.colorBD:  Gray95
+URxvt.colorUL:  Green
+URxvt.scrollBar:        False
+URxvt.mouseWheelScrollPage:     False
+URxvt.cursorBlink:      True
+URxvt.saveLines:        3000
+URxvt.borderLess:       False
+URxvt.font:     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*,xft:wenquanyi bitmap song:medium
+URxvt.boldFont: xft:terminusmod:bold,xft:wenquanyi bitmap song:bold
+urxvt.color0:   #2e3436
+urxvt.color1:   #cc0000
+urxvt.color2:   #4e9a06
+urxvt.color3:   #c4a000
+urxvt.color4:   #3465a4
+urxvt.color5:   #75507b
+urxvt.color6:   #06989a
+urxvt.color7:   #d3d7cf
+urxvt.color8:   #555753
+urxvt.color9:   #ef2929
+urxvt.color10:  #8ae234
+urxvt.color11:  #fce94f
+urxvt.color12:  #729fcf
+urxvt.color13:  #ad7fa8
+urxvt.color14:  #34e2e2
+urxvt.color15:  #eeeeec
+urxvt.iconFile: /usr/share/icons/clarity-canus/scalable/apps/terminal.svg
+URxvt.preeditType:      OverTheSpot
+URxvt.inputMethod:      fcitx
+URxvt.iso14755: False
+
 </code></pre>
-<h4><a href="#Bogus_NXDOMAIN_for_OpenDNS" name="Bogus_NXDOMAIN_for_OpenDNS" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Bogus NXDOMAIN for OpenDNS</h4>
-<pre><code>#blocked nxdomain opendns.com site 67.215.65.132
-bogus-nxdomain=67.215.65.132
-</code></pre>
-<h4><a href="#DHCP_Server" name="DHCP_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DHCP Server</h4>
-<pre><code>dhcp-range=192.168.0.100,192.168.0.200,12h
-dhcp-option=option:router,192.168.0.1
-dhcp-option=option:dns-server,192.168.0.1
-</code></pre>
-<h4><a href="#DHCP_Whitelist" name="DHCP_Whitelist" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;DHCP Whitelist</h4>
-<pre><code>dhcp-ignore=net:!whitelist
-dhcp-host=&lt;MAC-ADDRESS&gt;,net:whitelist
-</code></pre>
-<h4><a href="#Auto_DNS_Configuration_For_Websites_Located_in_China" name="Auto_DNS_Configuration_For_Websites_Located_in_China" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Auto DNS Configuration For Websites Located in China</h4>
-<p>Moved to github: <a href="https://github.com/felixonmars/dnsmasq-china-list">https://github.com/felixonmars/dnsmasq-china-list</a></p>
-<p><em>Last Update: Fri Oct 14 2016 23:44:05 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/DNSMasq.md">Source File</a></p>
+<p><em>Last Update: Fri Oct 14 2016 23:45:36 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/URxvt.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>

@@ -1,5 +1,6 @@
 title: Formatting Test Page
 category: Uncategoried
+time: 1470000000000
 ---
 
 This is a test page.
@@ -79,6 +80,7 @@ Need more explanations? Write abbr here and add a foot note[^exp1].
 [^exp1]: This is a corresponding footer note.
 That could last multiple lines and accepts **markdown** as well.
 
+这里是CJK字符与Western Characters之间自动空格的效果。私はArch Linux Userです。
 
 Have fun taking notes for your personal Knowledgebase.
 

@@ -1,5 +1,6 @@
 title: NAT
 category: Network Configuration
+time: 1470000000000
 ---
 #### Enable IP Forwarding First
 

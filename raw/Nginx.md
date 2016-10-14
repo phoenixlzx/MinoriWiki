@@ -1,5 +1,6 @@
 title: Nginx
 category: Server Configuration
+time: 1470000000000
 ---
 #### Installation on Ubuntu Server
 

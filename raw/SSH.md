@@ -1,5 +1,6 @@
 title: SSH
 category: Server Configuration
+time: 1470000000000
 ---
 #### Trust host key without /dev/tty
 

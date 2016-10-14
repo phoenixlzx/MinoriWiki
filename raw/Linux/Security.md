@@ -1,5 +1,6 @@
 title: Linux Security
 category: Server Configuration
+time: 1470000000000
 ---
 
 #### Reset Root Password

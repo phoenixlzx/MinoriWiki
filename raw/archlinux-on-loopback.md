@@ -1,5 +1,6 @@
 title: Install ArchLinux onto loopback filesystem
 category: Arch Linux
+time: 1470000000000
 ---
 
 ```
