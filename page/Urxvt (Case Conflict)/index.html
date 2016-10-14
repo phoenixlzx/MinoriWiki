@@ -7,7 +7,7 @@
     <meta name="author" content="Phoenix Nemo">
     <meta name="description" content="MinoriWiki demo site">
     <title>
-                Install ArchLinux onto loopback filesystem - MinoriWiki Demo            </title>
+                URxvt - MinoriWiki Demo            </title>
     <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
     <script src="/MinoriWiki/assets/highlight.min.js"></script>
@@ -17,7 +17,7 @@
 <div class="container">
     <div class="page-header">
                 <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
-                        <small>/ Install ArchLinux onto loopback filesystem</small>
+                        <small>/ URxvt</small>
                     </h1>
             </div>
 <div class="row">
@@ -120,103 +120,45 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
 <div class="index-content">
 <div class="row">
-<span class="label label-primary pull-right">Arch Linux</span>
+<span class="label label-primary pull-right">Desktop Related</span>
 </div>
 <div class="row">
-<pre><code>mkdir /host
-ntfs-3g /dev/sda5 /host
-truncate -s 8G /host/diskimg/archlinux.img
-mkfs -t ext4 -F /host/diskimg/archlinux.img
-modprobe loop # You need this if not using official installation media
-mount -o loop /host/diskimg/archlinux.img /mnt
-mkdir -p /mnt/var/lib/pacman
-vi /etc/pacman.d/mirrorlist
-pacman -Sy
-pacman -Syr /mnt
-pacman -Sr /mnt base ntfs-3g net-tools wireless_tools
-vi /mnt/etc/rc.conf
-vi /mnt/etc/mkinitcpio.conf
-mv /mnt/boot /host/diskimg/archboot
-ln -s /host/diskimg/archboot /mnt/boot
-</code></pre>
-<p><code>/mnt/lib/initcpio/hooks/looproot</code></p>
-<pre><code># vim:set ft=sh:
-run_hook ()
-{
-    # Now mount the host filesystem
-    mkdir /host
-    # mount -t ntfs /dev/sda5 /host
-    ntfs-3g /dev/sda5 /host
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>URxvt.depth:    32
+URxvt.background:       [85]#000000
+URxvt.foreground:       #ffffff
+URxvt.colorBD:  Gray95
+URxvt.colorUL:  Green
+URxvt.scrollBar:        False
+URxvt.mouseWheelScrollPage:     False
+URxvt.cursorBlink:      True
+URxvt.saveLines:        3000
+URxvt.borderLess:       False
+URxvt.font:     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*,xft:wenquanyi bitmap song:medium
+URxvt.boldFont: xft:terminusmod:bold,xft:wenquanyi bitmap song:bold
+urxvt.color0:   #2e3436
+urxvt.color1:   #cc0000
+urxvt.color2:   #4e9a06
+urxvt.color3:   #c4a000
+urxvt.color4:   #3465a4
+urxvt.color5:   #75507b
+urxvt.color6:   #06989a
+urxvt.color7:   #d3d7cf
+urxvt.color8:   #555753
+urxvt.color9:   #ef2929
+urxvt.color10:  #8ae234
+urxvt.color11:  #fce94f
+urxvt.color12:  #729fcf
+urxvt.color13:  #ad7fa8
+urxvt.color14:  #34e2e2
+urxvt.color15:  #eeeeec
+urxvt.iconFile: /usr/share/icons/clarity-canus/scalable/apps/terminal.svg
+URxvt.preeditType:      OverTheSpot
+URxvt.inputMethod:      fcitx
+URxvt.iso14755: False
 
-    # And the loop filesystem
-    losetup /dev/loop0 /host/diskimg/archlinux.img
-    mount -t ext4 /host/diskimg/archlinux.img /new_root
-    mount --bind /host /new_root/host
-}
 </code></pre>
-<p><code>/mnt/lib/initcpio/install/looproot</code></p>
-<pre><code>build() {
-        SCRIPT=&quot;looproot&quot;
-}
-
-help() {
-        cat &lt;&lt;HELPEOF
-        HELPEOF
-}
-
-# vim: set ft=sh ts=4 sw=4 et:
-</code></pre>
-<p><code>/mnt/etc/rc.d/functions.d/omitntfs</code></p>
-<pre><code>omitntfs() {
-    sync
-    add_omit_pids $(fuser /dev/sda5 2&gt;/dev/null | awk '-F ' '{ print $1 }')
-}
-
-# remove fuseblk from the original NETFS variable
-NETFS=&quot;nfs,nfs4,smbfs,cifs,codafs,ncpfs,shfs,fuse,glusterfs,davfs,fuse.glusterfs&quot;
-
-add_hook shutdown_prekillall omitntfs
-add_hook single_prekillall omitntfs
-</code></pre>
-<p><code>/mnt/etc/mkinitcpio.conf</code> (diff)</p>
-<pre><code>7c7
-&lt; MODULES=&quot;&quot;
----
-&gt; MODULES=&quot;loop fuse&quot;
-14c14
-&lt; BINARIES=&quot;&quot;
----
-&gt; BINARIES=&quot;/usr/bin/ntfs-3g&quot;
-59c59
-&lt; HOOKS=&quot;base udev autodetect pata scsi sata filesystems usbinput fsck&quot;
----
-&gt; HOOKS=&quot;base udev autodetect pata scsi sata filesystems usbinput looproot fsck&quot;
-</code></pre>
-<p><code>/mnt/etc/fstab</code></p>
-<pre><code># 
-# /etc/fstab: static file system information
-#
-# &lt;file system&gt; &lt;dir&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;
-/dev/loop0      /       ext4    loop            0       1
-/dev/sda5       /host   ntfs    defaults        0       0
-</code></pre>
-<pre><code>mkdir /mnt/host
-for i in dev proc sys host; do mount --bind /$i /mnt/$i; done
-modprobe dm-mod # You need this if you want to install GRUB
-chroot /mnt
-passwd
-mkinitcpio -p linux
-</code></pre>
-<p>(Install the bootloader)</p>
-<p>After installing the bootloader</p>
-<pre><code>exit
-umount /mnt/dev /mnt/proc /mnt/sys /mnt/host /mnt /host
-reboot
-</code></pre>
-<p>After reboot</p>
-<pre><code>exit
-</code></pre>
-<p><em>Last Update: Tue Nov 10 2015 04:02:53 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/archlinux-on-loopback.md">Source File</a></p>
+<p><em>Last Update: Wed Mar 25 2015 12:47:11 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/URxvt.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>
