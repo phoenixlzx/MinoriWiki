@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Phoenix Nemo">
+    <meta name="description" content="MinoriWiki demo site">
+    <title>
+                URxvt - MinoriWiki Demo            </title>
+    <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
+    <script src="/MinoriWiki/assets/highlight.min.js"></script>
+    <base target="_blank">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+                <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
+                        <small>/ URxvt</small>
+                    </h1>
+            </div>
+<div class="row">
+<!-- two columns -->
+<div class="col-lg-3 col-md-3">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">About</h3>
+    </div>
+    <div class="panel-body">
+		<p>This is the demo site of <a href="https://github.com/phoenixlzx/MinoriWiki">MinoriWiki</a></p>
+		<p>And a partial mirror of <a href="https://felixc.at">FelixWiki</a>.</p>
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Navigation</h3>
+    </div>
+    <div class="panel-body">
+        <h6><a href="/MinoriWiki/" target="_self">Homepage</a></h6>
+                <h5>Server Configuration</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/DNSMasq" target="_self">
+                                        DNSMasq                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/MongoDB" target="_self">
+                                        MongoDB                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/Nginx" target="_self">
+                                        Nginx                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/PHP" target="_self">
+                                        PHP                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/SSH" target="_self">
+                                        SSH                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/Linux/Security" target="_self">
+                                                            Linux / Linux Security                                    </a>
+            </li>
+                    </ul>
+                <h5>Network Operation</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/DoS" target="_self">
+                                        DoS                                    </a>
+            </li>
+                    </ul>
+                <h5>Network Configuration</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/NAT" target="_self">
+                                        NAT                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/PortForwarding" target="_self">
+                                        PortForwarding                                    </a>
+            </li>
+                    </ul>
+                <h5>Desktop Related</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/Tmux" target="_self">
+                                        Tmux                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/URxvt" target="_self">
+                                        URxvt                                    </a>
+            </li>
+                    </ul>
+                <h5>Arch Linux</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/archlinux-on-loopback" target="_self">
+                                        Install ArchLinux onto loopback filesystem                                    </a>
+            </li>
+                    </ul>
+                <h5>Uncategoried</h5>
+        <ul class="list-unstyled">
+                        <li>
+                <a href="/MinoriWiki/page/testv1" target="_self">
+                                        testv1                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/testv2" target="_self">
+                                        testv2                                    </a>
+            </li>
+                        <li>
+                <a href="/MinoriWiki/page/Test-Page" target="_self">
+                                        Formatting Test Page                                    </a>
+            </li>
+                    </ul>
+                        <hr/>
+        <a href="/MinoriWiki/changelog">Changelog</a>
+            </div>
+</div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-12">
+<div class="index-content">
+<div class="row">
+<span class="label label-primary pull-right">Desktop Related</span>
+</div>
+<div class="row">
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>URxvt.depth:    32
+URxvt.background:       [85]#000000
+URxvt.foreground:       #ffffff
+URxvt.colorBD:  Gray95
+URxvt.colorUL:  Green
+URxvt.scrollBar:        False
+URxvt.mouseWheelScrollPage:     False
+URxvt.cursorBlink:      True
+URxvt.saveLines:        3000
+URxvt.borderLess:       False
+URxvt.font:     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*,xft:wenquanyi bitmap song:medium
+URxvt.boldFont: xft:terminusmod:bold,xft:wenquanyi bitmap song:bold
+urxvt.color0:   #2e3436
+urxvt.color1:   #cc0000
+urxvt.color2:   #4e9a06
+urxvt.color3:   #c4a000
+urxvt.color4:   #3465a4
+urxvt.color5:   #75507b
+urxvt.color6:   #06989a
+urxvt.color7:   #d3d7cf
+urxvt.color8:   #555753
+urxvt.color9:   #ef2929
+urxvt.color10:  #8ae234
+urxvt.color11:  #fce94f
+urxvt.color12:  #729fcf
+urxvt.color13:  #ad7fa8
+urxvt.color14:  #34e2e2
+urxvt.color15:  #eeeeec
+urxvt.iconFile: /usr/share/icons/clarity-canus/scalable/apps/terminal.svg
+URxvt.preeditType:      OverTheSpot
+URxvt.inputMethod:      fcitx
+URxvt.iso14755: False
+
+</code></pre>
+<p><em>Last Update: Sat Oct 15 2016 09:31:15 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/URxvt.md">Source File</a></p>
+</div>
+<div class="row">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'minoriwikidemo';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    <div class="footer-text">
+        <p>
+            MinoriWiki Demo using <a href="https://github.com/phoenixlzx/MinoriWiki" target="_blank">MinoriWiki</a>
+        </p>
+    </div>
+</div>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
