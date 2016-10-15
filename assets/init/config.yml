@@ -13,6 +13,7 @@ wiki:
   theme: paper
   favicon: true    # put your favicon.ico into MinoriWiki site configuration root directory
   log: true    # enable commit logs (will be displayed in public)
+  logmax: 20    # maximum log amount to be displayed (to avoid very large webpage), default to 20.
 
 # Base
 base:
@@ -44,7 +45,7 @@ custom:
     footnote: true    # footnote
     ins: false    # EXPERIMENTAL ++inseted text++
     mark: false    # EXPERIMENTAL ==marked text==
-  mathjax: false    # enable MathJax TeX support, you need markdown.sanitize set to false to work
+  mathjax: false    # enable MathJax TeX support, you need markdown.html set to true (allow html) to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: vim    # auto open your note after command
 
