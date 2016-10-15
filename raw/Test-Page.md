@@ -50,6 +50,8 @@ ordered one:
 
 Water is the chemical substance with chemical formula H~2~O, 2^10^ is 1024.
 
+++inseted text++ and ==marked text==.
+
 Tables
 
 First Header  | Second Header
