@@ -7,7 +7,7 @@
     <meta name="author" content="Phoenix Nemo">
     <meta name="description" content="MinoriWiki demo site">
     <title>
-                Nginx - MinoriWiki Demo            </title>
+                URxvt - MinoriWiki Demo            </title>
     <link href="/MinoriWiki/assets/bootstrap.min.css" rel="stylesheet"/>
     <link href="/MinoriWiki/assets/style.css" rel="stylesheet"/>
     <script src="/MinoriWiki/assets/highlight.min.js"></script>
@@ -17,7 +17,7 @@
 <div class="container">
     <div class="page-header">
                 <h1><a href="/MinoriWiki/" class="logo-text" target="_self">MinoriWiki Demo</a>&nbsp;
-                        <small>/ Nginx</small>
+                        <small>/ URxvt</small>
                     </h1>
             </div>
 <div class="row">
@@ -124,101 +124,45 @@
 <div class="col-lg-9 col-md-9 col-sm-12">
 <div class="index-content">
 <div class="row">
-<span class="label label-primary pull-right">Server Configuration</span>
+<span class="label label-primary pull-right">Desktop Related</span>
 </div>
 <div class="row">
-<h4><a href="#Installation_on_Ubuntu_Server" name="Installation_on_Ubuntu_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Installation on Ubuntu Server</h4>
-<pre><code>apt-get install software-properties-common
+<h4><a href="#My_Configuration" name="My_Configuration" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;My Configuration</h4>
+<pre><code>URxvt.depth:    32
+URxvt.background:       [85]#000000
+URxvt.foreground:       #ffffff
+URxvt.colorBD:  Gray95
+URxvt.colorUL:  Green
+URxvt.scrollBar:        False
+URxvt.mouseWheelScrollPage:     False
+URxvt.cursorBlink:      True
+URxvt.saveLines:        3000
+URxvt.borderLess:       False
+URxvt.font:     -*-terminus-*-*-*-*-12-*-*-*-*-*-*-*,xft:wenquanyi bitmap song:medium
+URxvt.boldFont: xft:terminusmod:bold,xft:wenquanyi bitmap song:bold
+urxvt.color0:   #2e3436
+urxvt.color1:   #cc0000
+urxvt.color2:   #4e9a06
+urxvt.color3:   #c4a000
+urxvt.color4:   #3465a4
+urxvt.color5:   #75507b
+urxvt.color6:   #06989a
+urxvt.color7:   #d3d7cf
+urxvt.color8:   #555753
+urxvt.color9:   #ef2929
+urxvt.color10:  #8ae234
+urxvt.color11:  #fce94f
+urxvt.color12:  #729fcf
+urxvt.color13:  #ad7fa8
+urxvt.color14:  #34e2e2
+urxvt.color15:  #eeeeec
+urxvt.iconFile: /usr/share/icons/clarity-canus/scalable/apps/terminal.svg
+URxvt.preeditType:      OverTheSpot
+URxvt.inputMethod:      fcitx
+URxvt.iso14755: False
 
-add-apt-repository ppa:nginx/stable
-
-apt-get update; apt-get install nginx -y
 </code></pre>
-<h4><a href="#Installation_on_Debian_Server" name="Installation_on_Debian_Server" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Installation on Debian Server</h4>
-<pre><code>wget http://www.dotdeb.org/dotdeb.gpg -O - | apt-key add -
-
-tee /etc/apt/sources.list.d/dotdeb.list &lt;&lt; EOF
-deb http://mirror.us.leaseweb.net/dotdeb/ wheezy all
-deb-src http://mirror.us.leaseweb.net/dotdeb/ wheezy all
-EOF
-
-apt-get update; apt-get install nginx -y
-</code></pre>
-<h4><a href="#Proxy" name="Proxy" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Proxy</h4>
-<pre><code>resolver 8.8.4.4;
-server {
-    listen 3128;
-    location / {
-        proxy_pass http://$http_host$request_uri;
-    }
-}
-</code></pre>
-<h4><a href="#Reverse_Proxy" name="Reverse_Proxy" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Reverse Proxy</h4>
-<pre><code>server {
-    listen 80;
-    server_name new-site.com;
-
-    location / {
-        proxy_pass http://origin-site.com/;
-        proxy_redirect default;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        port_in_redirect    on;
-        server_name_in_redirect off;
-        proxy_connect_timeout 300;
-    }
-}
-</code></pre>
-<h4><a href="#Cached_Reverse_Proxy" name="Cached_Reverse_Proxy" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Cached Reverse Proxy</h4>
-<p>Make directories for cache:</p>
-<pre><code>mkdir -p /var/cache/nginx/cache
-mkdir -p /var/cache/nginx/temp
-</code></pre>
-<p>Paste below <code>log_format</code> directive in <code>nginx.conf</code>:</p>
-<pre><code>client_body_buffer_size  512k;
-proxy_connect_timeout    5;
-proxy_read_timeout       60;
-proxy_send_timeout       5;
-proxy_buffer_size        16k;
-proxy_buffers            4 64k;
-proxy_busy_buffers_size 128k;
-proxy_temp_file_write_size 128k;
-proxy_temp_path   /var/cache/nginx/temp;
-proxy_cache_path  /var/cache/nginx/cache levels=1:2 keys_zone=cache_one:500m inactive=7d max_size=30g;
-</code></pre>
-<p>Add to vhost configuration:</p>
-<pre><code>proxy_cache cache_one;
-proxy_cache_valid  200 304 3d;
-proxy_cache_key $host$uri$is_args$args;
-expires 10d;
-</code></pre>
-<h4><a href="#Set_Expires_Headers_For_Static_Content" name="Set_Expires_Headers_For_Static_Content" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Set Expires Headers For Static Content</h4>
-<pre><code>location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-    expires 1y;
-    log_not_found off;
-}
-</code></pre>
-<h4><a href="#Increase_HTTP_Post_Size_Limit" name="Increase_HTTP_Post_Size_Limit" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Increase HTTP Post Size Limit</h4>
-<pre><code>http {
-    #...
-    client_max_body_size 100m;
-    #...
-}
-</code></pre>
-<h4><a href="#Set_Correct_Files/Folders_Permissions" name="Set_Correct_Files/Folders_Permissions" target="_self" class="anchor"><span class="header-link">#</span></a>&nbsp;Set Correct Files/Folders Permissions</h4>
-<pre><code>chown -R www-data:www-data .
-find . -type f -exec chmod 644 {} \;
-find . -type d -exec chmod 755 {} \;
-</code></pre>
-<p>References:</p>
-<ol>
-<li><a href="http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE">http://wiki.ptsang.net/Debian%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE</a></li>
-<li><a href="http://nicholaskuechler.com/2011/04/24/nginx-how-to-set-expires-headers-for-images/">http://nicholaskuechler.com/2011/04/24/nginx-how-to-set-expires-headers-for-images/</a></li>
-<li><a href="http://www.vpsmm.com/blog-2522.html">http://www.vpsmm.com/blog-2522.html</a></li>
-<li><a href="http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/">http://rtcamp.com/wordpress-nginx/tutorials/php/increase-file-upload-size-limit/</a></li>
-</ol>
-<p><em>Last Update: Sat Oct 15 2016 09:31:15 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/Nginx.md">Source File</a></p>
+<p><em>Last Update: Sat Oct 15 2016 09:31:15 GMT+0900 (JST)</em>  <a href="/MinoriWiki/raw/URxvt.md">Source File</a></p>
 </div>
 <div class="row">
 <div id="disqus_thread"></div>
