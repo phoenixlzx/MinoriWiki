@@ -88,6 +88,26 @@ When parsing changelog page, the commits object is passed:
 ]
 ```
 
+### Speed
+
+For 1200 * [Format Test Page](https://phoenixlzx.github.io/MinoriWiki/page/Test-Page/) in 3 different categories:
+
+* with MathJax
+
+```
+~> time minori d
+minori d  70.00s user 1.42s system 105% cpu 1:07.76 total
+```
+
+* without MathJax
+
+```
+~> time minori d
+minori d  10.91s user 1.01s system 105% cpu 11.320 total
+```
+
+Tested on a ThinkPad X1 Carbon 2015 (i7-5600U / 16G RAM / 512G NVMe) with Arch Linux.
+
 ### License
 
 MIT.
