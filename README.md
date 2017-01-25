@@ -30,6 +30,7 @@ MinoriWiki is a static Wiki site Generator [![npm version](https://badge.fury.io
 * `minori done` or `minori d` - Generate site files
 * `minori commit` or `minori c` - Commit changes and deploy to production environment
 * `minori updatecfg` or `minori u` - Update current `config.yml` file with the new version installed. New config file will written to `config.yml.new`.
+* `minori server` or `minori s` - Start a static file server to preview your wiki site locally.
 
 ### Theme
 
