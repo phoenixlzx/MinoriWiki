@@ -30,7 +30,7 @@ dir:
 
 # Custom
 custom:
-  time: YYYY-MM-DD HH:mm:ss
+  time: dddd, MMMM Do YYYY, h:mm:ss a    # moment js format https://momentjs.com/docs/#/displaying/format/
   disqus: minoriwiki    # your disqus short link, leave blank to disable comment
   category: Uncategoried    # default category when creating new page
   markdown:
@@ -48,6 +48,11 @@ custom:
   mathjax: false    # enable MathJax TeX support, you need markdown.html set to true (allow html) to work
   autospacing: true    # use `pangunode` library to add space between CJK and Western characters automatically
   editor: vim    # auto open your note after command
+  # last update template, placeholders:
+  # %n% = newline
+  # %mtime% = file mtime in custom.time format
+  # %sourcepath% = raw file path
+  lastupdate: '%n%%n%_Last Update: %mtime%_ [Source File](%sourcepath%)%n%'
 
 # Deployment
 deploy:
