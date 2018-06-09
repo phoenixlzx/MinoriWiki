@@ -65,3 +65,6 @@ deploy:
     region: us-west-1
     accessKeyId: yourapikey
     accessKeySecret: yourapisecret
+  pushcommand:
+    enabled: false
+    command: /usr/bin/firebase deploy
